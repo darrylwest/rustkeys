@@ -1,6 +1,8 @@
 use rand::prelude::*;
 
-pub fn bytes(size: usize) -> Vec<u8> {
+type Bytes = Vec<u8>;
+
+pub fn bytes(size: usize) -> Bytes {
     let sz: usize = if size < 2 {
         2
     } else {
@@ -14,7 +16,7 @@ pub fn bytes(size: usize) -> Vec<u8> {
     results
 }
 
-pub fn bytes_to_string(bytes: Vec<u8>) -> String {
+pub fn bytes_to_string(bytes: Bytes) -> String {
     let mut results = vec![];
 
     for byte in bytes {
