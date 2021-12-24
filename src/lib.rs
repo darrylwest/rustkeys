@@ -13,17 +13,46 @@ pub fn bytes(size: usize) -> Vec<u8> {
         size
     };
 
-    let mut v = vec![];
+    let mut results= vec![];
     for i in 0..sz {
-        v.push(data[i]);
+        results.push(data[i]);
     }
 
-    v
+    results
+}
+
+pub fn bytes_to_string(bytes: Vec<u8>) -> String {
+    let mut results = vec![];
+
+    for byte in bytes {
+        results.push(format!("{:02x}", byte));
+    }
+
+    results.into_iter().rev().collect()
 }
 
 #[cfg(test)]
 mod tests {
-    use crate::bytes;
+    use crate::{bytes, bytes_to_string};
+
+    #[test]
+    fn bytes_to_random_string_test() {
+        let sz = 32;
+        let v = bytes(sz);
+        println!("{:?}", v);
+        let str: String = bytes_to_string(v);
+        assert_eq!(str.len(), sz * 2);
+        println!("{}", str);
+    }
+
+    #[test]
+    fn bytes_to_string_test() {
+        let v = vec![ 0, 1, 2, 3, 255 ];
+        println!("{:?}", v);
+        let str: String = bytes_to_string(v);
+        println!("{}", str);
+        assert_eq!(str, "ff03020100");
+    }
 
     #[test]
     fn bytes_min_test() {
