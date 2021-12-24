@@ -1,22 +1,15 @@
 use rand::prelude::*;
 
 pub fn bytes(size: usize) -> Vec<u8> {
-    const COUNT: usize = 64;
-    let mut data = [0u8; COUNT];
-    rand::thread_rng().fill_bytes(&mut data);
-
     let sz: usize = if size < 2 {
         2
-    } else if size > COUNT {
-        COUNT
     } else {
         size
     };
 
-    let mut results= vec![];
-    for i in 0..sz {
-        results.push(data[i]);
-    }
+    let mut results = vec![0u8; sz];
+
+    rand::thread_rng().fill_bytes(&mut results);
 
     results
 }
@@ -69,16 +62,16 @@ mod tests {
     }
 
     #[test]
-    fn bytes_max_test() {
+    fn bytes_test() {
         let v = bytes(64);
         println!("{:?}", v);
         assert_eq!(v.len(), 64);
     }
 
     #[test]
-    fn bytes_over_max_test() {
+    fn bytes_big_test() {
         let v = bytes(128);
         println!("{:?}", v);
-        assert_eq!(v.len(), 64);
+        assert_eq!(v.len(), 128);
     }
 }

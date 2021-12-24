@@ -53,7 +53,23 @@
     <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
     <property name="settings.editor.selected.configurable" value="ssh.settings" />
   </component>
-  <component name="RunManager" selected="Cargo.Test tests::bytes_to_string_test">
+  <component name="RunManager" selected="Cargo.Test tests::bytes_big_test">
+    <configuration name="Test tests::bytes_big_test" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package rustkeys --lib tests::bytes_big_test -- --exact" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="emulateTerminal" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="backtrace" value="SHORT" />
+      <envs />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Test tests::bytes_max_test" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
       <option name="command" value="test --package rustkeys --lib tests::bytes_max_test -- --exact" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
@@ -120,6 +136,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cargo.Test tests::bytes_big_test" />
         <item itemvalue="Cargo.Test tests::bytes_to_string_test" />
         <item itemvalue="Cargo.Test tests::bytes_max_test" />
         <item itemvalue="Cargo.Test tests::bytes_min_test" />
@@ -139,7 +156,7 @@
       <option name="presentableId" value="Default" />
       <updated>1640360829325</updated>
       <workItem from="1640360830612" duration="679000" />
-      <workItem from="1640365415964" duration="4208000" />
+      <workItem from="1640365415964" duration="5273000" />
     </task>
     <servers />
   </component>
