@@ -55,7 +55,7 @@ pub fn base36_key(size: usize) -> String {
     results.into_iter().rev().collect()
 }
 
-pub fn big_random(size: usize) -> String {
+pub fn big_random(size: usize, base: u32) -> String {
     let mut rng = rand::thread_rng();
 
     let mut bytes: Vec<u32> = vec![];
@@ -65,7 +65,7 @@ pub fn big_random(size: usize) -> String {
 
     let r = BigUint::new(bytes);
 
-    r.to_str_radix(36)
+    r.to_str_radix(base)
 }
 
 #[cfg(test)]
@@ -75,7 +75,7 @@ mod tests {
     #[test]
     fn big_random_test() {
         let sz: usize = 8;
-        let s = big_random(sz);
+        let s = big_random(sz, 36);
         assert!(s.len() > 48);
     }
 
