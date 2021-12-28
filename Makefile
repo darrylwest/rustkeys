@@ -20,6 +20,14 @@ clean:
 test:
 	clear && cargo test
 
+## bigrandom: compile and run bigrandom generator
+bigrandom:
+	cargo run --bin bigrandom
+
+## release: compile the binaries 
+release:
+	cargo build --release 
+
 ## watch: watch test and lib files and compile and test on change
 watch:
 	watchexec -c -d 500 cargo test
