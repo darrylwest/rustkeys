@@ -1,14 +1,10 @@
-use rand::prelude::*;
 use num_bigint::BigUint;
+use rand::prelude::*;
 
 type Bytes = Vec<u8>;
 
 pub fn bytes(size: usize) -> Bytes {
-    let sz: usize = if size < 2 {
-        2
-    } else {
-        size
-    };
+    let sz: usize = if size < 2 { 2 } else { size };
 
     let mut results = vec![0u8; sz];
 
@@ -28,14 +24,10 @@ pub fn bytes_to_string(bytes: Bytes) -> String {
 }
 
 pub fn base36_bytes(size: usize) -> Vec<u8> {
-    let sz: usize = if size < 2 {
-        2
-    } else {
-        size
-    };
+    let sz: usize = if size < 2 { 2 } else { size };
 
     let mut rng = rand::thread_rng();
-    let mut results = vec![0u8;0];
+    let mut results = vec![0u8; 0];
 
     for _ in 0..sz {
         results.push(rng.gen_range(0..36));
@@ -110,7 +102,7 @@ mod tests {
 
     #[test]
     fn bytes_to_string_test() {
-        let v = vec![ 0, 1, 2, 3, 255 ];
+        let v = vec![0, 1, 2, 3, 255];
         println!("{:?}", v);
         let str: String = bytes_to_string(v);
         println!("{}", str);
