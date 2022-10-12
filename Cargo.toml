@@ -1,6 +1,6 @@
 [package]
 name = "rustkeys"
-version = "1.10.29"
+version = "0.2.29"
 edition = "2021"
 
 [lib]

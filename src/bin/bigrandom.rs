@@ -3,7 +3,7 @@ use rustkeys::big_random;
 
 fn main() {
     let matches = App::new("BigRandom")
-        .version("1.12.29")
+        .version("0.2.29")
         .author("darryl.west@raincitysoftware.com")
         .about("A big, potentially huge random number generator to create base 36 random keys")
         .arg(
