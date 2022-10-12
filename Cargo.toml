@@ -1,6 +1,6 @@
 [package]
 name = "rustkeys"
-version = "21.12.28"
+version = "1.10.29"
 edition = "2021"
 
 [lib]
@@ -11,5 +11,6 @@ path = "src/lib.rs"
 
 [dependencies]
 clap = "2.34.0"
+fastrand = "1.8.0"
 num-bigint = "0.4.3"
 rand = "0.8.4"
