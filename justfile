@@ -38,6 +38,11 @@ watch:
 cover:
   cargo tarpaulin --out html --output-dir coverage
 
+# merge develop to main
+merge:
+    clear
+    git pull && git co main && git merge develop && git push && git co develop
+
 update-piedmont:
     ssh dpw@piedmont 'cd ~/raincity/rust-projects/{{ project }} && git pull'
 
