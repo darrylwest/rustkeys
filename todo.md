@@ -11,4 +11,4 @@
     * sequence - to generate a sequence from a static seed
     * service - a web or socket service (UDP?) to return new keys based on request specs
 * prepare for crate packaging and publish
-
+* add github/action/
