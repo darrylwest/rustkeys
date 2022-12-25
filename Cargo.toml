@@ -1,7 +1,16 @@
 [package]
 name = "rustkeys"
-version = "21.12.28"
+version = "0.2.29"
 edition = "2021"
+authors = ["darryl.west@raincitysoftware.com"]
+rust-version = "1.63"
+description = "A collection of unique key generators."
+keywords = ["key/value", "random" ]
+categories = ["database", "key/value store"]
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/darrylwest/rustkeys.git"
+readme = "README.md"
+publish = false
 
 [lib]
 name = "rustkeys"
@@ -11,5 +20,6 @@ path = "src/lib.rs"
 
 [dependencies]
 clap = "2.34.0"
+fastrand = "1.8.0"
 num-bigint = "0.4.3"
 rand = "0.8.4"
